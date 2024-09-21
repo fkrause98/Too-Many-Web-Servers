@@ -2,7 +2,7 @@ use std::io;
 use std::io::Read;
 use std::io::Write;
 use std::net::{TcpListener, TcpStream};
-fn main() {
+pub fn main() {
     let listener = TcpListener::bind("localhost:3000").unwrap();
     loop {
         let (connection, _) = listener.accept().unwrap();
