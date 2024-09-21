@@ -10,3 +10,8 @@ edition = "2021"
 name = "simple_server"
 path = "src/simple_server.rs"
 default-features = [ "simple_server" ]
+
+[[bin]]
+name = "non_blocking_server"
+path = "src/non_blocking_server.rs"
+default-features = [ "non_blocking_server" ]
