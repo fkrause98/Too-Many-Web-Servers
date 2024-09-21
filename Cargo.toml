@@ -9,3 +9,4 @@ edition = "2021"
 [[bin]]
 name = "simple_server"
 path = "src/simple_server.rs"
+default-features = [ "simple_server" ]
