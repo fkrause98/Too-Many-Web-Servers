@@ -21,6 +21,7 @@ pub fn main() {
         };
         let mut completed = Vec::new();
         'next: for (i, (connection, state)) in connections.iter_mut().enumerate() {
+            dbg!("CONNECTION");
             match state {
                 ConnectionState::Read { request, read } => loop {
                     match connection.read(&mut request[*read..]) {

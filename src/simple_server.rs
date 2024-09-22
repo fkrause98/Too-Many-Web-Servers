@@ -3,11 +3,11 @@ use std::io::Read;
 use std::io::Write;
 use std::net::{TcpListener, TcpStream};
 pub fn main() {
-    let listener = TcpListener::bind("localhost:3000").unwrap();
+    let listener = TcpListener::bind("0.0.0.0:3000").unwrap();
     loop {
         let (connection, _) = listener.accept().unwrap();
         if let Err(e) = handle_connection(connection) {
-            println!("Handle connetion {e}");
+            println!("Handle connection {e}");
         }
     }
 }
@@ -28,12 +28,11 @@ fn handle_connection(mut connection: TcpStream) -> io::Result<()> {
         }
     }
     let request = String::from_utf8_lossy(&request[..read]);
-    println!("{request}");
     let response = concat!(
         "HTTP/1.1 200 OK\r\n",
         "Content-Length: 12\n",
         "Connection: close\r\n\r\n",
-        "Hello world!"
+        "Hello world!\r\n"
     );
     loop {
         let num_bytes = connection.write(response[written..].as_bytes())?;

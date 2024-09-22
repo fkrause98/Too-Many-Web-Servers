@@ -1,7 +1,10 @@
 # Too-Many-Web-Servers
-Too many web servers!
+Too many web servers! A lot of them! Written in Rust!
 ## Quick Start
-
+1. Install nix (left as an exercise for the reader)
+2. ```make dev-setup```.
+3. Run one of the examples below.
+Extra step: See how each server behaves under the stress test with: ```make stress```
 ### Simple Server
 First, run:
 ```shell
@@ -12,7 +15,6 @@ Then in another terminal, you should able to do:
 curl localhost:3000
 # Hello world!
 ```
-
 ### Non Blocking Server
 First, run:
 ```shell
@@ -23,3 +25,5 @@ Then in another terminal, you should able to do:
 for elem in {1..10}; curl "localhost:3000"
 # Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!Hello world!%
 ```
+
+### Multiplexed Server

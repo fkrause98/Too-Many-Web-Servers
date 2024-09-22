@@ -3,9 +3,6 @@ name = "too-many-web-servers"
 version = "0.1.0"
 edition = "2021"
 
-[dependencies]
-
-
 [[bin]]
 name = "simple_server"
 path = "src/simple_server.rs"
@@ -15,3 +12,12 @@ default-features = [ "simple_server" ]
 name = "non_blocking_server"
 path = "src/non_blocking_server.rs"
 default-features = [ "non_blocking_server" ]
+
+[[bin]]
+name = "multiplexed_server"
+path = "src/multiplexed_server.rs"
+default-features = [ "multiplexed_server" ]
+
+[dependencies]
+polling = "3.7.3"
+smol = "2.0.2"
