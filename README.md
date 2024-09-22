@@ -5,6 +5,7 @@ Too many web servers! A lot of them! Written in Rust!
 2. ```make dev-setup```.
 3. Run one of the examples below.
 Extra step: See how each server behaves under the stress test with: ```make stress```
+You can also list the available targets with ```make help```
 ### Simple Server
 First, run:
 ```shell
